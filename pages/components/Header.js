@@ -19,7 +19,7 @@ const Header = () => {
           </div>
           <div>
             <Link
-              className="bg-orange-500 text-white rounded px-4 py-2"
+              className=" text-white rounded px-4 py-2 hover:bg-blue-200 hover:text-black"
               href="/auth/signin"
             >
               Sign In
@@ -28,7 +28,7 @@ const Header = () => {
           <div>
             <Link
               href="/auth/signup"
-              className="bg-orange-500 text-white rounded px-4 py-2"
+              className="bg-orange-500 text-white rounded px-4 py-2 hover:bg-blue-200 hover:text-black"
             >
               Sign Up
             </Link>
