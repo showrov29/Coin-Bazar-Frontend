@@ -6,13 +6,10 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Link href="" className="text-xl font-bold">
-            <img
-              src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fnohat.cc%2Ff%2Fswoosh-logo-designs-stock-vector-four-clipart-header-and-footer-design-png%2Fm2i8K9d3G6Z5m2G6-202208011740.html&psig=AOvVaw1EuyId93R-xtMTcArIBHgZ&ust=1701279302587000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMDujrad54IDFQAAAAAdAAAAABAE"
-              alt="logo"
-            />
+            <img className=" w-100 h-10" src="/images/header.png" alt="logo" />
           </Link>
         </div>
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-1">
           <div>
             <input
               type="text"
@@ -21,7 +18,10 @@ const Header = () => {
             />
           </div>
           <div>
-            <Link href="/auth/signin" className="text-white">
+            <Link
+              className="bg-orange-500 text-white rounded px-4 py-2"
+              href="/auth/signin"
+            >
               Sign In
             </Link>
           </div>
