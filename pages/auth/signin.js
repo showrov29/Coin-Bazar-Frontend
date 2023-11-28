@@ -1,6 +1,7 @@
 // pages/signin.js
 import { useState } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 const Signin = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -50,13 +51,14 @@ const Signin = () => {
             />
           </label>
           <button
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            className="bg-blue-400 text-white py-2 px-10 rounded hover:bg-blue-800"
             type="submit"
           >
             Login
           </button>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };

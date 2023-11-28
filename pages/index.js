@@ -8,6 +8,7 @@ export default function App() {
   return (
     <div>
       <Home />
+      <main>djdn</main>
     </div>
   );
 }
