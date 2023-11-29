@@ -133,7 +133,7 @@ const Register = () => {
               />
             </label>
             <button
-              className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              className="bg-blue-400 text-white py-2 px-4 md:px-20 rounded w-full hover:bg-blue-600"
               type="submit"
             >
               Submit

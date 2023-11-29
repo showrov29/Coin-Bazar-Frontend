@@ -1,3 +1,4 @@
+// pages/signin.js
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -43,7 +44,7 @@ const Signin = () => {
   return (
     <div>
       <Header />
-      <div className="container mx-auto mt-10 flex">
+      <div className="container mx-auto mt-10 flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2 lg:pr-4 hidden lg:block">
           <Swiper
             className="swiper-container"
@@ -92,7 +93,7 @@ const Signin = () => {
               />
             </label>
             <button
-              className="bg-blue-400 text-white py-2 px-20  rounded hover:bg-blue-700"
+              className="bg-blue-400 text-white py-2 px-4 md:px-20 rounded w-full mt-4 hover:bg-blue-600"
               type="submit"
             >
               Login
