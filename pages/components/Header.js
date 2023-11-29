@@ -42,8 +42,12 @@ const Header = () => {
             className="lg:hidden text-white focus:outline-none"
             onClick={toggleMenu}
           >
-            {/* Toggle button icon (you can use an icon library or your custom icon) */}
-            {isMenuOpen ? "Close" : "Open"}
+            {}
+            {isMenuOpen ? (
+              <img src="/images/close-icon.png" />
+            ) : (
+              <img src="/images/icon3.gif" />
+            )}
           </button>
           <div className="hidden lg:flex items-center space-x-1">
             {/* Displayed in larger screens and hidden in mobile */}
