@@ -30,9 +30,9 @@ const Header = () => {
               onClick={toggleMenu}
             >
               {isMenuOpen ? (
-                <img src="close" className="w-6 h-6" />
+                <img src="/images/i2.svg" className="w-8 h-8" />
               ) : (
-                <img src="open" className="w-6 h-6" />
+                <img src="/images/i1.svg" className="w-8 h-8" />
               )}
             </button>
             {isMenuOpen && (
