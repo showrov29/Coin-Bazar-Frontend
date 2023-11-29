@@ -22,6 +22,13 @@ const Header = () => {
             />
           </Link>
         </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-gray-200 text-black text-bold rounded p-1 w-100 focus:outline-none"
+          />
+        </div>
         <div className="flex items-center space-x-1">
           <div className={`lg:hidden relative`}>
             {/* Displayed in mobile and hidden in larger screens */}
@@ -52,13 +59,10 @@ const Header = () => {
               </div>
             )}
           </div>
+
           <div className="hidden lg:flex items-center space-x-1">
             {/* Displayed in larger screens and hidden in mobile */}
-            <input
-              type="text"
-              placeholder="Search..."
-              className="bg-gray-200 text-black text-bold rounded p-1 focus:outline-none"
-            />
+
             <Link
               className="text-white rounded-full px-4 py-2 hover:bg-orange-600 hover:text-black hover:underline"
               href="/auth/signin"
