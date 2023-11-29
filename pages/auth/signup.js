@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "tailwindcss/tailwind.css";
-
+<style href="style.css"></style>;
 const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -35,7 +35,7 @@ const Register = () => {
   const swiperOptions = {
     loop: true,
     autoplay: {
-      delay: 2000, // Auto-advance every 2 seconds
+      delay: 2000,
     },
     navigation: {
       nextEl: ".swiper-button-next",

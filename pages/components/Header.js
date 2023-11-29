@@ -54,17 +54,17 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="bg-gray-200 rounded p-1 focus:outline-none"
+              className="bg-gray-200 text-black text-bold rounded p-1 focus:outline-none"
             />
             <Link
-              className="text-white rounded px-4 py-2 hover:bg-blue-200 hover:text-black"
+              className="text-white rounded px-4 py-2 hover:hover:bg-orange-600 hover:text-black"
               href="/auth/signin"
             >
               Sign In
             </Link>
             <Link
               href="/auth/signup"
-              className="bg-orange-500 text-white rounded px-4 py-2 hover:bg-blue-200 hover:text-black"
+              className="bg-orange-500 text-white rounded px-4 py-2 hover:bg-orange-600 hover:text-black"
             >
               Sign Up
             </Link>
