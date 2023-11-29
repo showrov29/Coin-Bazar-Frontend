@@ -45,7 +45,7 @@ const Register = () => {
   return (
     <div>
       <Header />
-      <div className="container mx-auto flex mt-10">
+      <div className="container mx-auto flex mt-10 ">
         <div className="w-full md:w-1/2 px-2">
           <Swiper className="swiper-container" {...swiperOptions}>
             <SwiperSlide>

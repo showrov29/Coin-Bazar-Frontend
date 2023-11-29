@@ -28,7 +28,7 @@ const Signin = () => {
 
   const sliderImages = [
     "/images/slider/slider2.jpeg",
-    "/images/slider/slide2.jpeg",
+    "/images/slider/slide1.jpeg",
     "/images/slider/slide3.jpeg",
   ];
 

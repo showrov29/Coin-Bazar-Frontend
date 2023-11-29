@@ -27,13 +27,13 @@ const Header = () => {
             {/* Displayed in mobile and hidden in larger screens */}
             <Link
               href="/auth/signin"
-              className="block text-white py-2 px-4 hover:bg-blue-200 hover:text-black"
+              className="block text-white py-2 px-4 hover:bg-orange-600 hover:text-black"
             >
               Sign In
             </Link>
             <Link
               href="/auth/signup"
-              className="block bg-orange-500 text-white py-2 px-4 hover:bg-blue-200 hover:text-black"
+              className="block bg-orange-500 text-white py-2 px-4 hover:bg-orange-600 hover:text-black"
             >
               Sign Up
             </Link>
