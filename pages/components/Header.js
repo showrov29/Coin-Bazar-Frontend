@@ -1,31 +1,63 @@
+// components/Header.js
+
+import { useState } from "react";
 import Link from "next/link";
 
 const Header = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="bg-gray-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div>
-          <Link href="" className="text-xl font-bold">
-            <img className=" w-100 h-10" src="/images/header.png" alt="logo" />
+          <Link href="/home" className="text-xl font-bold">
+            <img
+              className="w-30 h-10 rounded-full"
+              src="/images/logoo.png"
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="flex items-center space-x-1">
-          <div>
+          <div className={`lg:hidden ${isMenuOpen ? "block" : "hidden"}`}>
+            {/* Displayed in mobile and hidden in larger screens */}
+            <Link
+              href="/auth/signin"
+              className="block text-white py-2 px-4 hover:bg-blue-200 hover:text-black"
+            >
+              Sign In
+            </Link>
+            <Link
+              href="/auth/signup"
+              className="block bg-orange-500 text-white py-2 px-4 hover:bg-blue-200 hover:text-black"
+            >
+              Sign Up
+            </Link>
+          </div>
+          <button
+            className="lg:hidden text-white focus:outline-none"
+            onClick={toggleMenu}
+          >
+            {/* Toggle button icon (you can use an icon library or your custom icon) */}
+            {isMenuOpen ? "Close" : "Open"}
+          </button>
+          <div className="hidden lg:flex items-center space-x-1">
+            {/* Displayed in larger screens and hidden in mobile */}
             <input
               type="text"
               placeholder="Search..."
               className="bg-gray-200 rounded p-1 focus:outline-none"
             />
-          </div>
-          <div>
             <Link
-              className=" text-white rounded px-4 py-2 hover:bg-blue-200 hover:text-black"
+              className="text-white rounded px-4 py-2 hover:bg-blue-200 hover:text-black"
               href="/auth/signin"
             >
               Sign In
             </Link>
-          </div>
-          <div>
             <Link
               href="/auth/signup"
               className="bg-orange-500 text-white rounded px-4 py-2 hover:bg-blue-200 hover:text-black"

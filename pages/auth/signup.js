@@ -35,19 +35,18 @@ const Register = () => {
   const swiperOptions = {
     loop: true,
     autoplay: {
-      delay: 500,
+      delay: 2000, // Auto-advance every 2 seconds
     },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   };
-
   return (
     <div>
       <Header />
       <div className="container mx-auto flex mt-10">
-        <div className="w-full md:w-1/2 px-4">
+        <div className="w-full md:w-1/2 px-2">
           <Swiper className="swiper-container" {...swiperOptions}>
             <SwiperSlide>
               <img
