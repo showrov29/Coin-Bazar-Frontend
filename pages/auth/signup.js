@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "tailwindcss/tailwind.css";
-<style href="style.css"></style>;
+
 const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -35,18 +35,19 @@ const Register = () => {
   const swiperOptions = {
     loop: true,
     autoplay: {
-      delay: 2000,
+      delay: 2000, // Auto-advance every 2 seconds
     },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   };
+
   return (
     <div>
       <Header />
-      <div className="container mx-auto flex mt-10 ">
-        <div className="w-full md:w-1/2 px-2">
+      <div className="container mx-auto flex flex-col lg:flex-row mt-10 my-10">
+        <div className="w-full lg:w-1/2 lg:pr-4 hidden lg:block">
           <Swiper className="swiper-container" {...swiperOptions}>
             <SwiperSlide>
               <img
@@ -70,11 +71,9 @@ const Register = () => {
               />
             </SwiperSlide>
           </Swiper>
-
-          <div className="swiper-button-next"></div>
-          <div className="swiper-button-prev"></div>
         </div>
 
+        {/* Registration Form (Centered) */}
         <div className="w-full md:w-1/2 bg-gray-100 p-6 rounded-lg shadow-md">
           <h1 className="text-2xl font-bold mb-6">Registration Form</h1>
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">

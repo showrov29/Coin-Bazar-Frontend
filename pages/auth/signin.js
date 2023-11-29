@@ -44,7 +44,7 @@ const Signin = () => {
     <div>
       <Header />
       <div className="container mx-auto mt-10 flex">
-        <div className="w-full md:w-1/2 px-2">
+        <div className="w-full lg:w-1/2 lg:pr-4 hidden lg:block">
           <Swiper
             className="swiper-container"
             loop={true}
@@ -92,7 +92,7 @@ const Signin = () => {
               />
             </label>
             <button
-              className="bg-blue-400 text-white py-2 px-10 rounded hover:bg-blue-800"
+              className="bg-blue-400 text-white py-2 px-20  rounded hover:bg-blue-700"
               type="submit"
             >
               Login
