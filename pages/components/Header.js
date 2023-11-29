@@ -14,7 +14,7 @@ const Header = () => {
     <header className="bg-gray-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div>
-          <Link href="/home" className="text-xl font-bold">
+          <Link href="/home" className="text-xl font-bold hover:underline">
             <img
               className="w-30 h-10 rounded-full"
               src="/images/logoo.png"
@@ -27,13 +27,13 @@ const Header = () => {
             {/* Displayed in mobile and hidden in larger screens */}
             <Link
               href="/auth/signin"
-              className="block text-white py-2 px-4 hover:bg-orange-600 hover:text-black"
+              className="block text-white  rounder py-2 px-4 hover:bg-orange-600 hover:text-black hover:underline"
             >
               Sign In
             </Link>
             <Link
               href="/auth/signup"
-              className="block bg-orange-500 text-white py-2 px-4 hover:bg-orange-600 hover:text-black"
+              className="block bg-orange-500 rounder text-white py-2 px-4 hover:bg-orange-600 hover:text-black hover:underline"
             >
               Sign Up
             </Link>
@@ -57,14 +57,14 @@ const Header = () => {
               className="bg-gray-200 text-black text-bold rounded p-1 focus:outline-none"
             />
             <Link
-              className="text-white rounded px-4 py-2 hover:hover:bg-orange-600 hover:text-black"
+              className="text-white rounded-full px-4 py-2 hover:hover:bg-orange-600 hover:text-black hover:underline"
               href="/auth/signin"
             >
               Sign In
             </Link>
             <Link
               href="/auth/signup"
-              className="bg-orange-500 text-white rounded px-4 py-2 hover:bg-orange-600 hover:text-black"
+              className="bg-orange-500 text-white rounded-full px-4 py-2 hover:bg-orange-600 hover:text-black hover:underline"
             >
               Sign Up
             </Link>
