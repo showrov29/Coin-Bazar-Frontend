@@ -17,38 +17,41 @@ const Header = () => {
           <Link href="/home" className="text-xl font-bold hover:underline">
             <img
               className="w-30 h-10 rounded-full"
-              src="/images/logoo.png"
+              src="/images/icon3.gif"
               alt="logo"
             />
           </Link>
         </div>
         <div className="flex items-center space-x-1">
-          <div className={`lg:hidden ${isMenuOpen ? "block" : "hidden"}`}>
+          <div className={`lg:hidden relative`}>
             {/* Displayed in mobile and hidden in larger screens */}
-            <Link
-              href="/auth/signin"
-              className="block text-white  rounder py-2 px-4 hover:bg-orange-600 hover:text-black hover:underline"
+            <button
+              className="text-white focus:outline-none"
+              onClick={toggleMenu}
             >
-              Sign In
-            </Link>
-            <Link
-              href="/auth/signup"
-              className="block bg-orange-500 rounder text-white py-2 px-4 hover:bg-orange-600 hover:text-black hover:underline"
-            >
-              Sign Up
-            </Link>
-          </div>
-          <button
-            className="lg:hidden text-white focus:outline-none"
-            onClick={toggleMenu}
-          >
-            {}
-            {isMenuOpen ? (
-              <img src="/images/close-icon.png" />
-            ) : (
-              <img src="/images/icon3.gif" />
+              {isMenuOpen ? (
+                <img src="close" className="w-6 h-6" />
+              ) : (
+                <img src="open" className="w-6 h-6" />
+              )}
+            </button>
+            {isMenuOpen && (
+              <div className="absolute top-0 right-0 mt-10 bg-gray-800 rounded-md shadow-md p-2 space-y-2">
+                <Link
+                  href="/auth/signin"
+                  className="block bg-orange-400 text-white h-10 w-20 px-2 py-1 hover:bg-orange-500 hover:text-black hover:underline"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/auth/signup"
+                  className="block bg-orange-400 text-white  px-2 py-1 hover:bg-orange-500 hover:text-black hover:underline"
+                >
+                  Sign Up
+                </Link>
+              </div>
             )}
-          </button>
+          </div>
           <div className="hidden lg:flex items-center space-x-1">
             {/* Displayed in larger screens and hidden in mobile */}
             <input
@@ -57,7 +60,7 @@ const Header = () => {
               className="bg-gray-200 text-black text-bold rounded p-1 focus:outline-none"
             />
             <Link
-              className="text-white rounded-full px-4 py-2 hover:hover:bg-orange-600 hover:text-black hover:underline"
+              className="text-white rounded-full px-4 py-2 hover:bg-orange-600 hover:text-black hover:underline"
               href="/auth/signin"
             >
               Sign In
