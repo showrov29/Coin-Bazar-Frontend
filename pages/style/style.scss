@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
+
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+  transition: $property $duration $ease;
+}
+
+* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: "Mukta", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  background: $bg;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  &.learn-more {
+    width: 12rem;
+    height: auto;
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $black;
+      border-radius: 1.625rem;
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $white;
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute;
+            content: "";
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $black;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &:hover {
+    .circle {
+      width: 100%;
+      .icon {
+        &.arrow {
+          background: $white;
+          transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text {
+      color: $white;
+    }
+  }
+}
+
+@supports (display: grid) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.625rem;
+    grid-template-areas: ". main main ." ". main main .";
+  }
+
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+:root {
+  --main-bg-color: #2874f0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.header {
+  background-color: var(--main-bg-color);
+  font-family: "Lato", sans-serif;
+}
+
+nav {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 88px;
+  padding: 0 25px;
+}
+
+nav ul {
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 0 23px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover {
+  font-weight: bolder;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  width: 493px;
+  height: 23px;
+  border-radius: 5px;
+  margin: 0 16px 0 56px;
+  padding: 0 12px;
+}
+
+.btn {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+
+.container {
+  min-height: calc(100vh - 58px - 12vh);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.hero img {
+  width: 80%;
+  height: 55vh;
+}
+
+h2 {
+  margin: 18px;
+}
+
+.card-container {
+  overflow: scroll;
+}
+
+.card {
+  display: flex;
+}
+
+.card .card-item {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  align-items: center;
+}
+
+.card .card-item img {
+  width: 200px;
+  height: 200px;
+  padding: 0 25px;
+}
+
+.card .card-item:hover {
+  animation-name: imgHoverPop;
+  transform: perspective(80px) translate3d(0, 0, 10px);
+  /* animation-duration: 1s;
+    animation-timing-function: ease-out; */
+}
+
+/* @keyframes imgHoverPop {
+    0%{
+        transform: translate3d(0,0,0);
+     
+    }
+    50%{
+        transform:translate3d(0,0,0);
+        
+    }
+
+    100%{
+        transform:perspective(50px) translate3d(0,0,10px);
+        
+    }
+} */
+
+.footer {
+  background-color: var(--main-bg-color);
+  height: 12vh;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+}
+
+.all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 5px 10px;
+  color: white;
+  background-color: var(--main-bg-color);
+  border: 2px solid white;
+  border-radius: 7px;
+  cursor: pointer;
+  align-items: center;
+}
+
+@media screen and (max-width: 1086px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    margin-top: 5px;
+  }
+
+  nav ul li {
+    padding: 0 5px;
+  }
+
+  .search input {
+    width: 180px;
+    margin: 0 5px;
+  }
+}
+////////////
+//
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+.col-item {
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  background: #fff;
+}
+.col-item .photo img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.col-item .info {
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  margin-top: 1px;
+}
+
+.col-item:hover .info {
+  background-color: #f5f5dc;
+}
+.col-item .price {
+  /*width: 50%;*/
+  float: left;
+  margin-top: 5px;
+}
+
+.col-item .price h5 {
+  line-height: 20px;
+  margin: 0;
+}
+
+.price-text-color {
+  color: #219fd1;
+}
+
+.col-item .info .rating {
+  color: #777;
+}
+
+.col-item .rating {
+  /*width: 50%;*/
+  float: left;
+  font-size: 17px;
+  text-align: right;
+  line-height: 52px;
+  margin-bottom: 10px;
+  height: 52px;
+}
+
+.col-item .separator {
+  border-top: 1px solid #e1e1e1;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.col-item .separator p {
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.col-item .separator p i {
+  margin-right: 5px;
+}
+.col-item .btn-add {
+  width: 50%;
+  float: left;
+}
+
+.col-item .btn-add {
+  border-right: 1px solid #e1e1e1;
+}
+
+.col-item .btn-details {
+  width: 50%;
+  float: left;
+  padding-left: 10px;
+}
+.controls {
+  margin-top: 20px;
+}
+[data-slide="prev"] {
+  margin-right: 10px;
+}
