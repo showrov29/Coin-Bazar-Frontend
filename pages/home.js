@@ -14,12 +14,13 @@ const Home = () => {
       <div className="dark:bg-gray-800 transition-colors duration-500">
         <Header />
 
-        <input
-          type="checkbox"
-          class=" toggle"
-          onClick={toggleDarkMode}
-          checked
-        />
+        <label className="toggle">
+          <input
+            type="checkbox"
+            className="toggle-checkbox"
+            onClick={toggleDarkMode}
+          />
+        </label>
 
         <div className="mx-8 grid grid-flow-row gap-5 grid-cols-5 xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
           <div class="w-full h-96 max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
