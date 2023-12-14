@@ -1,6 +1,7 @@
 // pages/register.js
 import { useState } from "react";
 import Link from "next/link";
+import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,9 +13,10 @@ import "tailwindcss/tailwind.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    name: "",
     email: "",
     phone: "",
+    address: "",
     password: "",
     confirmPassword: "",
   });
@@ -27,15 +29,27 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data submitted:", formData);
+    try {
+      // Make a request to your backend API for registration
+      const response = await axios.post(
+        "https://aea1-103-239-252-36.ngrok-free.app/user/register",
+        formData
+      );
+
+      // Handle the response accordingly, e.g., show a success message
+      console.log("Registration successful:", response.data);
+    } catch (error) {
+      // Handle registration failure, e.g., show an error message
+      console.error("Registration failed:", error.message);
+    }
   };
 
   const swiperOptions = {
     loop: true,
     autoplay: {
-      delay: 2000, // Auto-advance every 2 seconds
+      delay: 2000,
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -81,8 +95,8 @@ const Register = () => {
               Username:
               <input
                 type="text"
-                name="username"
-                value={formData.username}
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
                 className="w-full border border-gray-300 p-2 rounded"
                 required
@@ -105,6 +119,17 @@ const Register = () => {
                 type="tel"
                 name="phone"
                 value={formData.phone}
+                onChange={handleChange}
+                className="w-full border border-gray-300 p-2 rounded"
+                required
+              />
+            </label>
+            <label className="block mb-2">
+              Address:
+              <input
+                type="text"
+                name="address"
+                value={formData.address}
                 onChange={handleChange}
                 className="w-full border border-gray-300 p-2 rounded"
                 required
