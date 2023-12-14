@@ -1,5 +1,6 @@
 // pages/signin.js
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,9 +23,28 @@ const Signin = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data submitted:", formData);
+    try {
+      // Make a request to your backend API for user login
+      const response = await axios.post(
+        "https://aea1-103-239-252-36.ngrok-free.app/user/login",
+        formData
+      );
+
+      // Handle the response accordingly, e.g., show a success message or redirect
+      console.log("Login successful:", response.data);
+
+      // You may want to redirect the user after successful login
+      // For example, using Next.js router
+      // Replace "/dashboard" with the actual URL you want to redirect to
+      // import { useRouter } from "next/router";
+      // const router = useRouter();
+      // router.push("/dashboard");
+    } catch (error) {
+      // Handle login failure, e.g., show an error message
+      console.error("Login failed:", error.message);
+    }
   };
 
   const sliderImages = [
@@ -32,14 +52,6 @@ const Signin = () => {
     "/images/slider/slide1.jpeg",
     "/images/slider/slide3.jpeg",
   ];
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      console.log("Auto slide change");
-    }, 2000);
-
-    return () => clearInterval(intervalId);
-  }, []);
 
   return (
     <div>
